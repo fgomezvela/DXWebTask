@@ -5,6 +5,7 @@ Resume
 ======
 Here, I present a simple web application to manage a task list. I have developed two different solutions for the Task based on different tecnologies:
 * A Java-based RESTFul Api with two simple methods GET and POST. A simple client based on AngularJS and Boostrap invokes these methods in the top of the application. The project was created with maven for project management.  
+
 * As alternative solution I have developed a different solution based on MongoDB+NodeJS+AngularJS+JBootstrap. Note that You have to install NodeJS and MongoDB in your computer to test it.
 
 All files in both projects are properly commented.
