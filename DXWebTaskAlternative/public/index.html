@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en" ng-app="angularTodo">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="DX Task">
+<meta name="author" content="Francisco A. Gómez Vela">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DX-Task by Francisco A. Gómez Vela</title>
+
+
+<!-- Optional theme -->
+<link rel="stylesheet"
+	href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+<script
+		src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script
+		src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+	<script src="main.js"></script>
+
+<link rel="stylesheet"
+	href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+</head>
+<body ng-controller="mainController">
+	<div class="container-fluid">
+		<!--Header-->
+		<div class="jumbotron text-center">
+			<p class="lead">
+			<h1>Task List application with AngularJS+Boostrap+NodeJs+MongoDB</h1>
+			</p>
+			</br>
+			<h2>
+				Number of added Tasks: <span class="label label-success">{{
+					todos.length }}</span>
+			</h2>
+		</div>
+
+		
+
+			<!--Form To insert new Tasks-->
+		<div id="todo-form" class="row">
+			<div class="col-sm-8 col-sm-offset-2 text-center">
+				<form name="form" novalidate>
+					<div class="form-group">
+						<input type="text" class="form-control input-lg text-center"
+							placeholder="Insert a new task to save" ng-model="formData.text"
+							required />
+
+					</div>
+					<button class="btn btn-primary btn-lg" ng-disabled="form.$invalid"
+						ng-click="createTodo()">Add Task</button>
+				</form>
+			</div>
+		</div>
+		
+		<!--Task List-->
+		<div id="todo-list" class="row">
+			<div class="col-sm-4 col-sm-offset-4">
+				<div class="checkbox" ng-repeat="todo in todos">
+					<label> <input type="checkbox"
+						ng-click="deleteTodo(todo._id)"><span type="checkbox"
+						class="glyphicon glyphicon-ok"></span></input> {{ todo.text }}
+					</label>
+				</div>
+			</div>
+		</div>
+		
+			<div class="panel panel-default">
+			<div class="panel-heading">
+				<strong>App Information</strong>
+			</div>
+			<div class="panel-body">
+				<p>
+					<strong>Author:</strong> Francisco A. Gómez Vela
+				</p>
+				<p>
+					<strong>Description:</strong> The second task for DX. A web
+					application with Angular+Boostrap+MongoDB+NodeJS. This simple application call to the GET method to present a list of task and 
+					also call to the POST method to store a new task in the list. Moreover, you can delete task by calling a DELETE method.
+				</p>
+			</div>
+		</div>
+
+		<div class="footer">
+			<p>&copy;Francisco A. Gómez Vela -- 2014</p>
+		</div>
+		
+	</div>
+
+	
+</body>
+</html>
